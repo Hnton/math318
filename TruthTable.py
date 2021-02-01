@@ -1,27 +1,16 @@
-import itertools
+def getSym(x):
+    if x:
+        return '| True '
+    else:
+        return '| False'
 
-print("Enter the number")
-n = input()
-n = int(n)
-print(n)
-r=2**n
-line="+---"*n+"+"
-for i in range(r):
-    a = "|"
-    print(line)
-    for j in range(n):
-        if(i//(r/2**(j+1)))%2==0:
-            a= a+" T |"
-            continue
-        a=a+" F |"
-    print(a)
+values = [True, False]
+print(" -------------------------------")
+print("|   P  ", "|   Q  ", "| P=>Q ", "| P<=>Q |")
+print(" -------------------------------")
+for p in values:
+    for q in values:
+        print(getSym(p), getSym(q), getSym(not p or q), getSym((not p or q) and (not q or p)), "|")
+        print(" -------------------------------")
 
-table = list(itertools.product([True, False], repeat = n))
-data =list(zip(table))
-
-for  i in enumerate(data):
-    line = ''.join(str(x).ljust(0) for x in i)
-    print(line)
-    if i == 0:
-        print('-' * len(line))
 
