@@ -20,9 +20,11 @@ def euc(a,b):
 			break
 	return gcd
 
-
+#Compute first 2 numbers
 f = euc(a[0],a[1])
+#Compute result from first 2 and 3rd number
 s = euc(f,a[2])
+#Compute result from 2nd and 3rd number with 4th number
 l = euc(s,a[3])
 
 lcm = a[0]
