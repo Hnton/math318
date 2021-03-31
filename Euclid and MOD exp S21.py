@@ -42,5 +42,3 @@ def modexp(base, exponent, mod):
 		exponent=exponent//2
 	return prod
 
-
-print(modexp(3, 6, 11))
